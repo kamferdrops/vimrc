@@ -15,6 +15,14 @@ set wrapmargin=0
 set formatoptions-=t			" Don't change wrapping on existing lines
 set formatoptions+=l			" Black magic
 
+" # Download plug.vim
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+
 " # Install Plugins
 call plug#begin('~/.vim/plugged')
 	" ## Themes
@@ -22,13 +30,13 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline-themes'
 
 	" ## Markdown
-	Plug 'nelstrom/vim-markdown-folding'
+	"Plug 'nelstrom/vim-markdown-folding'
 	Plug 'tpope/vim-markdown'
 
 	" ## Other Tools
 	Plug 'vim-airline/vim-airline'					" Airline bar
-	Plug 'scrooloose/syntastic'						" syntax info
-	Plug 'Raimondi/delimitmate'						" smart completion of delimiters
+	"Plug 'scrooloose/syntastic'						" syntax info
+	"Plug 'Raimondi/delimitmate'						" smart completion of delimiters
 call plug#end()
 
 " # Plugin Settings
