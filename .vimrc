@@ -3,6 +3,9 @@ set nocompatible				" vim-specific settings, non-vi-compatible
 set backspace=indent,eol,start 	" Allow backspace in insert mode
 set number						" Line numbers
 set hidden						" Allow hidden buffers
+set undodir=~/.vim/undo//
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
 filetype plugin indent on		" Enable file type detection and do language-dependent indenting.
 set history=100					" Default = 8
 nnoremap ; :
